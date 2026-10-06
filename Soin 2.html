@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Je prends soin de moi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{--bordeaux:#340a12;--bordeaux-deep:#1f050a;--creme:#f1e8df;--creme-soft:rgba(241,232,223,.55);--ligne:rgba(241,232,223,.16)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:transparent;height:100%;overflow:hidden}
+  body{font-family:'Cormorant Garamond',Georgia,serif;color:var(--creme);padding:2px}
+  #cadre{transform-origin:top center}
+  .carte{background:var(--bordeaux);border:1.5px solid var(--bordeaux-deep);box-shadow:inset 0 0 0 5px var(--bordeaux),inset 0 0 0 6px var(--creme-soft);border-radius:500px 500px 14px 14px;padding:30px 12px 9px;width:256px;max-width:100%;margin:0 auto}
+  h1{font-weight:600;font-size:15px;letter-spacing:.05em;text-align:center;line-height:1.1;white-space:nowrap}
+  .etoile{display:block;text-align:center;font-size:10px;color:var(--creme-soft);margin:1px 0 3px;line-height:1}
+  ul{list-style:none}
+  li+li{border-top:1px solid var(--ligne)}
+  a{display:flex;align-items:center;gap:7px;padding:2px 2px;color:var(--creme);text-decoration:none;font-size:13.5px;line-height:15px;white-space:nowrap;overflow:hidden}
+  a span.t{overflow:hidden;text-overflow:ellipsis}
+  a span.i{flex:none;width:18px;text-align:center;font-size:11px}
+  a:focus-visible{outline:1.5px solid var(--creme);outline-offset:1px;border-radius:4px}
+</style>
+</head>
+<body>
+  <div id="cadre">
+    <div class="carte">
+      <h1>Je prends soin de moi</h1>
+      <span class="etoile">✦</span>
+      <ul>
+        <li><a href="https://www.notion.so/83d1d7150fa9434cbfd446083f0bf7df" target="_blank" rel="noopener"><span class="i">☑️</span><span class="t">Habit tracking</span></a></li>
+        <li><a href="https://www.notion.so/19083c5919ff819fa612c84fd79e7908" target="_blank" rel="noopener"><span class="i">🥘</span><span class="t">Mes recettes</span></a></li>
+        <li><a href="https://www.notion.so/19083c5919ff8127a427cccdb94395ce" target="_blank" rel="noopener"><span class="i">🤸</span><span class="t">Pilates</span></a></li>
+        <li><a href="https://www.notion.so/19083c5919ff81dbaa98dcaa683007e3" target="_blank" rel="noopener"><span class="i">🏋️</span><span class="t">Fitness</span></a></li>
+        <li><a href="https://www.notion.so/19083c5919ff81fd8fb1ebdf4401796e" target="_blank" rel="noopener"><span class="i">🧘</span><span class="t">Yoga</span></a></li>
+        <li><a href="https://www.notion.so/18a83c5919ff80e6a727cfe329953cee" target="_blank" rel="noopener"><span class="i">🧖</span><span class="t">Skin and body</span></a></li>
+        <li><a href="https://www.notion.so/18a83c5919ff80f4a47dfa63ce4e5dd7" target="_blank" rel="noopener"><span class="i">💇</span><span class="t">Hair</span></a></li>
+        <li><a href="https://www.notion.so/18a83c5919ff80438588c518a5fdccfb" target="_blank" rel="noopener"><span class="i">👗</span><span class="t">Dressing</span></a></li>
+        <li><a href="https://www.notion.so/19083c5919ff815d9cfbfed47fef9dd3" target="_blank" rel="noopener"><span class="i">🎬</span><span class="t">Movie / Series</span></a></li>
+        <li><a href="https://www.notion.so/19083c5919ff81658ac4cbbe02fe8092" target="_blank" rel="noopener"><span class="i">📚</span><span class="t">My reading</span></a></li>
+        <li><a href="https://www.notion.so/19083c5919ff81ceadf4f88b774f40a5" target="_blank" rel="noopener"><span class="i">🎨</span><span class="t">Leisure, activities</span></a></li>
+        <li><a href="https://www.notion.so/19083c5919ff8119b390e31fae0378c4" target="_blank" rel="noopener"><span class="i">🐾</span><span class="t">Pets</span></a></li>
+        <li><a href="https://www.notion.so/19083c5919ff8179b969f7af9a58b15e" target="_blank" rel="noopener"><span class="i">🪴</span><span class="t">Plants / gardens</span></a></li>
+        <li><a href="https://www.notion.so/18a83c5919ff8036b144c03c4eef1594" target="_blank" rel="noopener"><span class="i">🏡</span><span class="t">Homes</span></a></li>
+        <li><a href="https://www.notion.so/19083c5919ff815bbaa8da4f19ad68d5" target="_blank" rel="noopener"><span class="i">✈️</span><span class="t">Travel</span></a></li>
+      </ul>
+    </div>
+  </div>
+<script>
+  // Réduit la carte juste ce qu'il faut pour qu'elle tienne en entier dans le cadre Notion.
+  (function(){
+    var cadre=document.getElementById('cadre');
+    function ajuster(){
+      cadre.style.transform='none';
+      var h=cadre.offsetHeight, w=cadre.offsetWidth;
+      var dispoH=window.innerHeight-4, dispoW=window.innerWidth-4;
+      var e=Math.min(1, dispoH/h, dispoW/w);
+      cadre.style.transform=e<1?'scale('+e+')':'none';
+    }
+    window.addEventListener('resize',ajuster);
+    window.addEventListener('load',ajuster);
+    if(document.fonts&&document.fonts.ready){document.fonts.ready.then(ajuster);}
+    ajuster();
+  })();
+</script>
+</body>
+</html>
